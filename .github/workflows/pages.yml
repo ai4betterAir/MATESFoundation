@@ -27,9 +27,11 @@ jobs:
           mkdir _site
           cp *.html robots.txt sitemap.xml .nojekyll _site/
           cp -R assets _site/assets
+          cp -R bn _site/bn
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+

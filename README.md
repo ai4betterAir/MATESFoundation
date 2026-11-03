@@ -24,4 +24,11 @@ No official contact or payment details were supplied. The contact form prepares 
 
 ## Accessibility and privacy
 
-Responsive layouts, keyboard focus, skip navigation, labelled inputs, mobile menu and reduced-motion support. No analytics, local storage, tracking cookies or third-party JavaScript. Google Fonts loads optional typefaces with system fallbacks.
+Responsive layouts, keyboard focus, skip navigation, labelled inputs, mobile menu and reduced-motion support. No analytics, tracking cookies or third-party JavaScript. Only the language preference is saved in localStorage; form entries are never saved. Google Fonts loads optional typefaces with system fallbacks.
+
+
+## Languages
+
+English lives at the root and Bangladeshi Bengali at `bn/`. The visible language selector keeps the current page, query parameters and section anchor, and remembers the selection on the device. Bengali pages use `lang="bn-BD"`, Noto Sans Bengali and localized form feedback. The supplied logo stays unchanged in both languages.
+
+`translations-bn.json` maps English content to reviewed Bengali copy. `localize.py` generates both versions as part of `python build.py`, adds language alternates and updates the sitemap. There are no Python package dependencies. If English content changes, add its translation before rebuilding; missing translations fail the build. Direct `bn/` links work without JavaScript.
