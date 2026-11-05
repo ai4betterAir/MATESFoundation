@@ -29,3 +29,37 @@ if(form&&bengali){
   });
  }
 }
+
+
+// Browse the initiative spotlight without changing page or shifting the layout.
+const slides=Array.from(document.querySelectorAll('.spotlight-slide'));
+if(slides.length){
+ let index=0;
+ const position=document.querySelector('#spotlight-position');
+ const number=n=>n.toLocaleString(bengali?'bn-BD':'en',{minimumIntegerDigits:2,useGrouping:false});
+ const show=next=>{
+  index=(next+slides.length)%slides.length;
+  slides.forEach((slide,i)=>{slide.hidden=i!==index;slide.classList.toggle('changing',i===index);});
+  position.textContent=`${number(index+1)} / ${number(slides.length)}`;
+ };
+ document.querySelector('#spotlight-prev').addEventListener('click',()=>show(index-1));
+ document.querySelector('#spotlight-next').addEventListener('click',()=>show(index+1));
+ show(0);
+}
+// Filter focus areas while leaving their links and detail pages intact.
+for(const filters of document.querySelectorAll('.initiative-filters')){
+ const grid=filters.nextElementSibling;
+ filters.addEventListener('click',e=>{
+  const button=e.target.closest('button[data-filter]');if(!button)return;
+  const filter=button.dataset.filter;
+  for(const b of filters.querySelectorAll('button'))b.setAttribute('aria-pressed',String(b===button));
+  for(const card of grid.querySelectorAll('.program-card'))card.hidden=filter!=='all'&&card.dataset.category!==filter;
+ });
+}
+const progress=document.querySelector('.reading-progress span');
+if(progress){
+ let scheduled=false;
+ const update=()=>{const available=document.documentElement.scrollHeight-window.innerHeight;progress.style.transform=`scaleX(${available>0?Math.max(0,Math.min(1,window.scrollY/available)):0})`;scheduled=false;};
+ window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(update);}},{passive:true});
+ window.addEventListener('resize',update);update();
+}

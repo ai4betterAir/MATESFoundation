@@ -32,3 +32,8 @@ Responsive layouts, keyboard focus, skip navigation, labelled inputs, mobile men
 English lives at the root and Bangladeshi Bengali at `bn/`. The visible language selector keeps the current page, query parameters and section anchor, and remembers the selection on the device. Bengali pages use `lang="bn-BD"`, Noto Sans Bengali and localized form feedback. The supplied logo stays unchanged in both languages.
 
 `translations-bn.json` maps English content to reviewed Bengali copy. `localize.py` generates both versions as part of `python build.py`, adds language alternates and updates the sitemap. There are no Python package dependencies. If English content changes, add its translation before rebuilding; missing translations fail the build. Direct `bn/` links work without JavaScript.
+
+
+## Larger interactive design
+
+The site uses larger English and Bengali typography, wider layouts and vector interface icons. The home page includes a manually controlled six-initiative spotlight, category filters, native expandable questions and reduced-motion-aware decorative animation. `refine.py` updates presentation copy and associated Bengali translations before `localize.py` generates all pages. Run `python build.py` after editing source.

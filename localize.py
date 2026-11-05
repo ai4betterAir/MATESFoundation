@@ -47,7 +47,7 @@ def build_locales(root):
  missing=set()
  for f in pages:
   source=f.read_text()
-  source=source.replace('<script src="assets/site.js" defer></script>','<script src="assets/language.js"></script><script src="assets/site.js" defer></script>')
+  source=source.replace('<script src="assets/site.js?v=3" defer></script>','<script src="assets/language.js"></script><script src="assets/site.js?v=3" defer></script>')
   # Privacy: remember only the language choice, never form entries.
   source=source.replace('<h2>Hosting and cookies</h2>','<p>Your selected language is saved on this device so the website can remember your preference. Form entries are not saved.</p><h2>Hosting and cookies</h2>')
   parser=BengaliHTML(mapping);parser.feed(source);missing|=parser.missing
@@ -60,3 +60,4 @@ def build_locales(root):
    path.write_text(text)
  if missing:raise ValueError('Missing Bengali translations: '+repr(sorted(missing)))
  (root/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+ROOT_URL+prefix+f.name+'</loc></url>' for f in pages if f.name!='404.html' for prefix in ('','bn/'))+'</urlset>')
+

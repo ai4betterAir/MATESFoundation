@@ -45,5 +45,9 @@ save('404.html','Page not found','Find your way back to MATES Foundation.',intro
 (P/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>https://ai4betterair.github.io/MATESFoundation/'+f.name+'</loc></url>' for f in sorted(P.glob('*.html')) if f.name!='404.html')+'</urlset>')
 
 
+from refine import refresh_design
+refresh_design(P,programs,icon)
+
 from localize import build_locales
 build_locales(P)
+
