@@ -87,17 +87,34 @@ def refresh_design(root,programs,icon):
     for q,a in [('How can I get involved?','Start with your interests and the time or skills you can offer. Explore the volunteer and partnership options, then prepare an introduction on our contact page.'),('Can organisations partner with MATES?','Yes. We welcome conversations with educational institutions, community groups, businesses and professionals who share our purpose. Specific partnerships are agreed individually.'),('Are applications and donations open?','Program applications and online donations are not open yet. Confirmed activities, eligibility and verified donation details will be published on this website.'),('Can I use this website in Bengali?','Yes. Choose English or বাংলা in the header. The whole website is available in both languages, and your browser remembers your choice.')]:
         faq+='<details><summary>'+q+'</summary><p>'+a+'</p></details>'
     faq+='</div></div></section>'
+    translations.update({
+        'COMMUNITY EVENTS':'সামাজিক কার্যক্রম',
+        'Care in action.':'সহমর্মিতা যখন কাজে রূপ নেয়।',
+        'Completed':'সম্পন্ন',
+        'FOOD SUPPORT · 2026':'খাদ্য সহায়তা · ২০২৬',
+        'Sharing Happiness of Ramadan & Eid':'রমজান ও ঈদের আনন্দ ভাগ করে নেওয়া',
+        'In 2026, MATES Initiative provided food support to families in need during Ramadan and Eid.':'২০২৬ সালে রমজান ও ঈদ উপলক্ষে প্রয়োজনের সময়ে পরিবারগুলোর পাশে দাঁড়াতে খাদ্য সহায়তা দেয় মেটস ইনিশিয়েটিভ।',
+        'The event brought the spirit of sharing into practical action, helping families celebrate the season with dignity and a sense of belonging.':'এই আয়োজনের মাধ্যমে পারস্পরিক সহযোগিতা ও ভাগ করে নেওয়ার চেতনা বাস্তবে রূপ পায়। লক্ষ্য ছিল পরিবারগুলোর পাশে থেকে মর্যাদা ও আনন্দের সঙ্গে উৎসব উদ্‌যাপনে সহায়তা করা।',
+        'Food support':'খাদ্য সহায়তা',
+        'Ramadan & Eid':'রমজান ও ঈদ',
+        'Community care':'সমাজের পাশে'
+    })
+    event='<section class="section community-events" id="events"><div class="wrap"><span class="eyebrow">COMMUNITY EVENTS</span><h2>Care in action.</h2><article class="community-event"><div class="event-stamp"><span class="event-year">2026</span><span class="event-status">Completed</span><div class="event-symbol">'+icon('people')+'</div></div><div class="event-story"><p class="event-kicker">FOOD SUPPORT · 2026</p><h3>Sharing Happiness of Ramadan &amp; Eid</h3><p>In 2026, MATES Initiative provided food support to families in need during Ramadan and Eid.</p><p>The event brought the spirit of sharing into practical action, helping families celebrate the season with dignity and a sense of belonging.</p><div class="event-tags"><span>Food support</span><span>Ramadan &amp; Eid</span><span>Community care</span></div></div></article></div></section>'
     for f in root.glob('*.html'):
         source=f.read_text()
         for old,new,bn in edits:source=source.replace(old,new)
         source=source.replace('<header>','<div class="reading-progress" aria-hidden="true"><span></span></div><header>')
         source=source.replace('<body id="top">','<body id="top"><div class="site-watermark" aria-hidden="true"><img src="assets/mates-foundation-logo.png" alt="" width="1672" height="941" decoding="async"></div>')
-        source=source.replace('href="assets/style.css"','href="assets/style.css?v=4"').replace('src="assets/site.js"','src="assets/site.js?v=3"')
+        source=source.replace('href="assets/style.css"','href="assets/style.css?v=5"').replace('src="assets/site.js"','src="assets/site.js?v=3"')
         if f.name in ('index.html','initiatives.html'):
             source=source.replace('<div class="program-grid">',filters+'<div class="program-grid">',1)
         if f.name=='index.html':
             source=source.replace('<section class="purpose-strip">',spotlight+'<section class="purpose-strip">',1)
             source=source.replace('</main>',faq+'</main>')
+        if f.name=='community.html':
+            marker='<section class="section pale"><div class="wrap"><span class="eyebrow">EXPLORE MORE</span>'
+            assert marker in source, 'Community event insertion point missing'
+            source=source.replace(marker,event+marker,1)
         for p in programs:
             category='learning' if p[0] in ('education','scholarships','skills') else 'care'
             source=source.replace(f'<a class="program-card" href="{p[0]}.html">',f'<a class="program-card" data-category="{category}" href="{p[0]}.html">')
