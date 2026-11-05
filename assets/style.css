@@ -12,3 +12,11 @@ html[lang=bn-BD] body,html[lang=bn-BD] h1,html[lang=bn-BD] h2,html[lang=bn-BD] h
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
 .arrow-svg{display:inline-block;width:1.1em;height:1.1em;vertical-align:-.12em;flex-shrink:0;stroke:currentColor;stroke-width:1.8;fill:none}
+
+/* Decorative original-logo watermark. No pointer or accessibility interference. */
+.site-watermark{position:fixed;inset:0;overflow:hidden;pointer-events:none;user-select:none;z-index:20;mix-blend-mode:multiply;opacity:.055;contain:strict}
+.site-watermark img{position:absolute;left:50%;top:52%;width:clamp(560px,72vw,1120px);height:auto;max-width:none;transform:translate(-50%,-50%) rotate(-8deg);animation:watermark-drift 28s ease-in-out infinite;pointer-events:none}
+@keyframes watermark-drift{0%,100%{transform:translate(-52%,-48%) rotate(-8deg)}50%{transform:translate(-47%,-54%) rotate(-4deg)}}
+@media(max-width:600px){.site-watermark{opacity:.04}.site-watermark img{width:610px;left:48%;top:54%}}
+@media(prefers-reduced-motion:reduce){.site-watermark img{animation:none;transform:translate(-50%,-50%) rotate(-6deg)}}
+@media print{.site-watermark{display:none}}

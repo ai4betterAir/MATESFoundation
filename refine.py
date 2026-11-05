@@ -91,7 +91,8 @@ def refresh_design(root,programs,icon):
         source=f.read_text()
         for old,new,bn in edits:source=source.replace(old,new)
         source=source.replace('<header>','<div class="reading-progress" aria-hidden="true"><span></span></div><header>')
-        source=source.replace('href="assets/style.css"','href="assets/style.css?v=3"').replace('src="assets/site.js"','src="assets/site.js?v=3"')
+        source=source.replace('<body id="top">','<body id="top"><div class="site-watermark" aria-hidden="true"><img src="assets/mates-foundation-logo.png" alt="" width="1672" height="941" decoding="async"></div>')
+        source=source.replace('href="assets/style.css"','href="assets/style.css?v=4"').replace('src="assets/site.js"','src="assets/site.js?v=3"')
         if f.name in ('index.html','initiatives.html'):
             source=source.replace('<div class="program-grid">',filters+'<div class="program-grid">',1)
         if f.name=='index.html':
