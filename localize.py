@@ -47,7 +47,7 @@ def build_locales(root):
  missing=set()
  for f in pages:
   source=f.read_text()
-  source=source.replace('<script src="assets/site.js?v=3" defer></script>','<script src="assets/language.js"></script><script src="assets/site.js?v=3" defer></script>')
+  source=source.replace('<script src="assets/site.js?v=4" defer></script>','<script src="assets/language.js"></script><script src="assets/site.js?v=4" defer></script>')
   # Privacy: remember only the language choice, never form entries.
   source=source.replace('<h2>Hosting and cookies</h2>','<p>Your selected language is saved on this device so the website can remember your preference. Form entries are not saved.</p><h2>Hosting and cookies</h2>')
   parser=BengaliHTML(mapping);parser.feed(source);missing|=parser.missing

@@ -76,11 +76,11 @@ def refresh_design(root,programs,icon):
     }
     translations.update(new_text)
     titles=list(new_text)[-6:]
-    spotlight='<section class="spotlight-section"><div class="wrap"><div class="spotlight-top"><span class="eyebrow">EXPLORE WHAT MATTERS TO YOU</span><div class="spotlight-controls"><span id="spotlight-position">01 / 06</span><button type="button" id="spotlight-prev" aria-label="Previous initiative">←</button><button type="button" id="spotlight-next" aria-label="Next initiative">→</button></div></div><div class="spotlight" aria-label="Initiative spotlight">'
+    spotlight='<section class="spotlight-section" data-initiative="education"><div class="wrap"><div class="spotlight-top"><span class="eyebrow">EXPLORE WHAT MATTERS TO YOU</span><div class="spotlight-controls"><span id="spotlight-position">01 / 06</span><button type="button" id="spotlight-prev" aria-label="Previous initiative">←</button><button type="button" id="spotlight-next" aria-label="Next initiative">→</button></div></div><div class="spotlight" aria-label="Initiative spotlight">'
     for i,p in enumerate(programs):
         slug,num,name,tag,desc,short,ic,focus,txt=p
         revised=next((new for old,new,bn in edits if old==desc),desc)
-        spotlight+=f'<article class="spotlight-slide" data-slide="{i}"'+(' hidden' if i else '')+f'><div class="spotlight-symbol">{icon(ic)}</div><div><h2>{titles[i]}</h2><p>{revised}</p></div><a class="button" href="{slug}.html">Read about this initiative <span>↗</span></a></article>'
+        spotlight+=f'<article class="spotlight-slide" data-slide="{i}" data-initiative="{slug}"'+(' hidden' if i else '')+f'><div class="spotlight-symbol">{icon(ic)}</div><div><h2>{titles[i]}</h2><p>{revised}</p></div><a class="button" href="{slug}.html">Read about this initiative <span>↗</span></a></article>'
     spotlight+='</div></div></section>'
     filters='<div class="initiative-filters" role="group" aria-label="Filter initiatives"><button type="button" data-filter="all" aria-pressed="true">All initiatives</button><button type="button" data-filter="learning" aria-pressed="false">Learning &amp; opportunity</button><button type="button" data-filter="care" aria-pressed="false">Care &amp; support</button></div>'
     faq='<section class="section faq-section"><div class="wrap faq-grid"><div><span class="eyebrow">COMMON QUESTIONS</span><h2>A few things you might want to know.</h2><p>Every contribution starts with a conversation.</p></div><div class="faq-list">'
@@ -105,7 +105,7 @@ def refresh_design(root,programs,icon):
         for old,new,bn in edits:source=source.replace(old,new)
         source=source.replace('<header>','<div class="reading-progress" aria-hidden="true"><span></span></div><header>')
         source=source.replace('<body id="top">','<body id="top"><div class="site-watermark" aria-hidden="true"><img src="assets/mates-foundation-logo.png" alt="" width="1672" height="941" decoding="async"></div>')
-        source=source.replace('href="assets/style.css"','href="assets/style.css?v=5"').replace('src="assets/site.js"','src="assets/site.js?v=3"')
+        source=source.replace('href="assets/style.css"','href="assets/style.css?v=6"').replace('src="assets/site.js"','src="assets/site.js?v=4"')
         if f.name in ('index.html','initiatives.html'):
             source=source.replace('<div class="program-grid">',filters+'<div class="program-grid">',1)
         if f.name=='index.html':
@@ -117,7 +117,9 @@ def refresh_design(root,programs,icon):
             source=source.replace(marker,event+marker,1)
         for p in programs:
             category='learning' if p[0] in ('education','scholarships','skills') else 'care'
-            source=source.replace(f'<a class="program-card" href="{p[0]}.html">',f'<a class="program-card" data-category="{category}" href="{p[0]}.html">')
+            source=source.replace(f'<a class="program-card" href="{p[0]}.html">',f'<a class="program-card" data-category="{category}" data-initiative="{p[0]}" href="{p[0]}.html">')
+        if f.stem in {p[0] for p in programs}:
+            source=source.replace('<body id="top">',f'<body id="top" data-initiative="{f.stem}">',1)
         source=source.replace('↗','<svg class="arrow-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg>')
         f.write_text(source)
     for key,value in list(translations.items()):

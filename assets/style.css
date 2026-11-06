@@ -37,3 +37,36 @@ html[lang=bn-BD] .event-story h3{font-size:39px}html[lang=bn-BD] .event-story>p:
 html[lang=bn-BD] .event-kicker{font-size:17px;letter-spacing:0}html[lang=bn-BD] .event-status,html[lang=bn-BD] .event-tags span{font-size:17px}
 @media(max-width:900px){.community-event{grid-template-columns:165px minmax(0,1fr)}.event-stamp{padding:32px 18px}.event-year{font-size:43px}.event-story{padding:32px}.event-story h3{font-size:31px}.event-story>p:not(.event-kicker){font-size:18px}html[lang=bn-BD] .event-story h3{font-size:32px}}
 @media(max-width:600px){.community-event{grid-template-columns:1fr;margin-top:26px}.event-stamp{flex-direction:row;gap:18px;padding:21px 24px;flex-wrap:wrap}.event-year{font-size:38px}.event-status{font-size:14px}.event-symbol{padding:0;margin:0 0 0 auto}.event-symbol svg{width:41px;height:41px}.event-story{padding:28px 24px}.event-story h3{font-size:28px}.event-story>p:not(.event-kicker){font-size:18px}.event-tags{gap:8px}.event-tags span{font-size:13px;padding:6px 11px}html[lang=bn-BD] .event-story h3{font-size:30px}html[lang=bn-BD] .event-story>p:not(.event-kicker){font-size:20px}html[lang=bn-BD] .event-status,html[lang=bn-BD] .event-tags span{font-size:15px}}
+
+/* Each initiative carries the same recognisable colour across its page and cards. */
+[data-initiative="education"]{--initiative:#1d4ed8;--initiative-deep:#173da8;--initiative-soft:#edf3ff;--initiative-line:#c1d3fa}
+[data-initiative="scholarships"]{--initiative:#6d28d9;--initiative-deep:#5420a6;--initiative-soft:#f3eeff;--initiative-line:#d7c3f6}
+[data-initiative="community"]{--initiative:#166534;--initiative-deep:#14532d;--initiative-soft:#edf7ef;--initiative-line:#bedfc6}
+[data-initiative="health"]{--initiative:#be123c;--initiative-deep:#971032;--initiative-soft:#fff0f3;--initiative-line:#f0bdca}
+[data-initiative="emergency"]{--initiative:#b45309;--initiative-deep:#8c4008;--initiative-soft:#fff4e6;--initiative-line:#ebcea7}
+[data-initiative="skills"]{--initiative:#0e7490;--initiative-deep:#155e75;--initiative-soft:#eaf8fc;--initiative-line:#b5dfe9}
+[data-initiative]{--teal:var(--initiative);--pale:var(--initiative-soft)}
+body[data-initiative] .page-hero{background:linear-gradient(115deg,var(--initiative-soft) 20%,#fff 140%);border-bottom:1px solid var(--initiative-line)}
+body[data-initiative] .detail-icon{background:var(--initiative-soft);color:var(--initiative);border:1px solid var(--initiative-line)}
+body[data-initiative] .info-panel{background:linear-gradient(145deg,var(--initiative),var(--initiative-deep));border:1px solid var(--initiative-deep);box-shadow:0 18px 42px #062b4e12}
+body[data-initiative] .info-panel h3,body[data-initiative] .info-panel p,body[data-initiative] .info-panel .eyebrow{color:#fff}
+body[data-initiative] .info-panel .small-note{color:#fffffff0}
+body[data-initiative] .info-panel .button{background:white;color:var(--initiative-deep);box-shadow:0 5px 15px #00000010}
+body[data-initiative] .info-panel .button:hover{background:var(--initiative-soft);color:var(--initiative-deep)!important}
+body[data-initiative] .button:not(.white):not(.info-panel .button){background:var(--initiative)}
+body[data-initiative] .button:not(.white):not(.info-panel .button):hover{background:var(--initiative-deep)}
+.program-card[data-initiative]{border-color:var(--initiative-line);border-top:4px solid var(--initiative);background:linear-gradient(145deg,var(--initiative-soft),#fff 55%)}
+.program-card[data-initiative] .program-icon{background:var(--initiative-soft);color:var(--initiative);border:1px solid var(--initiative-line)}
+.program-card[data-initiative] .number,.program-card[data-initiative] .card-link{color:var(--initiative-deep)}
+.program-card[data-initiative]:hover{border-color:var(--initiative)}
+.program-card[data-initiative]:after{background:var(--initiative)}
+.spotlight-section[data-initiative]{background:linear-gradient(120deg,var(--initiative-deep),var(--initiative))}
+.spotlight-section[data-initiative] .eyebrow,.spotlight-section[data-initiative] .spotlight p,.spotlight-section[data-initiative] .spotlight-controls>span{color:white}
+.spotlight-section[data-initiative] .spotlight-symbol{color:var(--initiative-soft);background:#ffffff10}
+.spotlight-section[data-initiative] .button{color:var(--initiative-deep);background:white}
+.spotlight-section[data-initiative] .button:hover{background:var(--initiative-soft);color:var(--initiative-deep)!important}
+body[data-initiative="community"] .community-events{background:var(--initiative-soft);border-color:var(--initiative-line)}
+body[data-initiative="community"] .community-event{border-color:var(--initiative-line)}
+body[data-initiative="community"] .event-stamp{background:var(--initiative-deep)}
+body[data-initiative="community"] .event-status{background:var(--initiative-soft);color:var(--initiative-deep)}
+body[data-initiative="community"] .event-symbol{color:var(--initiative-soft)}

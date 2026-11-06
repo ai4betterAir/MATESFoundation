@@ -41,6 +41,7 @@ if(slides.length){
   index=(next+slides.length)%slides.length;
   slides.forEach((slide,i)=>{slide.hidden=i!==index;slide.classList.toggle('changing',i===index);});
   position.textContent=`${number(index+1)} / ${number(slides.length)}`;
+  document.querySelector('.spotlight-section').dataset.initiative=slides[index].dataset.initiative;
  };
  document.querySelector('#spotlight-prev').addEventListener('click',()=>show(index-1));
  document.querySelector('#spotlight-next').addEventListener('click',()=>show(index+1));
