@@ -14,7 +14,12 @@ def create_team_page(root,save,intro):
         'One team.':'একটি টিম।','A shared purpose.':'একটি অভিন্ন লক্ষ্য।',
         'Working together to turn compassion, knowledge and commitment into a better society.':'সহমর্মিতা, জ্ঞান ও অঙ্গীকার নিয়ে একসঙ্গে উন্নত সমাজ গড়ার পথে।',
         'Our team page is taking shape. Names and photographs will be added soon.':'আমাদের টিমের পরিচিতি সাজানো হচ্ছে। সদস্যদের নাম ও ছবি শিগগিরই যুক্ত করা হবে।',
-        'LEADERSHIP & COMMITTEE':'নেতৃত্ব ও পরিচালনা কমিটি',
+        'Executive Committee':'কার্যনির্বাহী কমিটি',
+        'Board of Executives':'নির্বাহী পরিষদ',
+        'Board of Coordinators':'সমন্বয়ক পরিষদ',
+        'OUR LEADERSHIP':'আমাদের নেতৃত্ব',
+        'OUR EXECUTIVES':'আমাদের নির্বাহী পরিষদ',
+        'OUR COORDINATORS':'আমাদের সমন্বয়ক পরিষদ',
         'People behind our purpose.':'আমাদের পথচলার মানুষ।',
         'INITIATIVE COORDINATORS':'উদ্যোগের সমন্বয়ক',
         'Six initiatives. Shared commitment.':'ছয়টি উদ্যোগ। সম্মিলিত অঙ্গীকার।',
@@ -39,8 +44,9 @@ def create_team_page(root,save,intro):
         else:portrait=PORTRAIT
         return '<article class="team-card"'+theme+'><div class="team-photo"'+(' aria-hidden="true"' if not member.get('image') else '')+'>'+portrait+'</div><h3>'+escape(role)+'</h3><p class="team-member-name'+(' pending' if not member.get('name') else '')+'">'+escape(name)+'</p></article>'
     body=intro('OUR TEAM','One team.<br><em>A shared purpose.</em>','Working together to turn compassion, knowledge and commitment into a better society.')
-    body+='<section class="section team-section"><div class="wrap"><p class="team-intro-note">Our team page is taking shape. Names and photographs will be added soon.</p><div class="team-section-heading"><span class="eyebrow">LEADERSHIP &amp; COMMITTEE</span><h2>People behind our purpose.</h2></div><div class="team-grid committee-grid">'+''.join(card(m) for m in members if m['group']=='committee')+'</div></div></section>'
-    body+='<section class="section pale team-section"><div class="wrap"><div class="team-section-heading"><span class="eyebrow">INITIATIVE COORDINATORS</span><h2>Six initiatives. Shared commitment.</h2></div><div class="team-grid coordinator-grid">'+''.join(card(m) for m in members if m['group']=='initiatives')+'</div></div></section>'
+    body+='<section class="section team-section" id="executive-committee"><div class="wrap"><p class="team-intro-note">Our team page is taking shape. Names and photographs will be added soon.</p><div class="team-section-heading"><span class="eyebrow">OUR LEADERSHIP</span><h2>Executive Committee</h2></div><div class="team-grid committee-grid">'+''.join(card(m) for m in members if m['group']=='executive-committee')+'</div></div></section>'
+    body+='<section class="section pale team-section" id="board-of-executives"><div class="wrap"><div class="team-section-heading"><span class="eyebrow">OUR EXECUTIVES</span><h2>Board of Executives</h2></div><div class="team-grid committee-grid">'+''.join(card(m) for m in members if m['group']=='board-executives')+'</div></div></section>'
+    body+='<section class="section team-section" id="board-of-coordinators"><div class="wrap"><div class="team-section-heading"><span class="eyebrow">OUR COORDINATORS</span><h2>Board of Coordinators</h2></div><div class="team-grid coordinator-grid">'+''.join(card(m) for m in members if m['group']=='board-coordinators')+'</div></div></section>'
     body+='<section class="section"><div class="wrap team-invitation"><div><h2>Want to be part of the effort?</h2><p>Share your time, skills or ideas and explore how you can contribute to the MATES community.</p></div><a class="button" href="get-involved.html">Explore ways to get involved <span>↗</span></a></div></section>'
     save('team.html','Team','The team and committee roles behind MATES Foundation.',body)
     (root/'translations-bn.json').write_text(json.dumps(translations,ensure_ascii=False,indent=2)+'\n')
