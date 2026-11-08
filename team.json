@@ -1,0 +1,16 @@
+[
+  {"id":"president","group":"committee","role":"President","role_bn":"সভাপতি","name":null,"name_bn":null,"image":null},
+  {"id":"vice-president","group":"committee","role":"Vice President","role_bn":"সহসভাপতি","name":null,"name_bn":null,"image":null},
+  {"id":"secretary","group":"committee","role":"Secretary","role_bn":"সম্পাদক","name":null,"name_bn":null,"image":null},
+  {"id":"joint-secretary","group":"committee","role":"Joint Secretary","role_bn":"যুগ্ম সম্পাদক","name":null,"name_bn":null,"image":null},
+  {"id":"treasurer","group":"committee","role":"Treasurer","role_bn":"কোষাধ্যক্ষ","name":null,"name_bn":null,"image":null},
+  {"id":"organising-secretary","group":"committee","role":"Organising Secretary","role_bn":"সাংগঠনিক সম্পাদক","name":null,"name_bn":null,"image":null},
+  {"id":"office-secretary","group":"committee","role":"Office Secretary","role_bn":"দপ্তর সম্পাদক","name":null,"name_bn":null,"image":null},
+  {"id":"communications-secretary","group":"committee","role":"Communications Secretary","role_bn":"যোগাযোগ ও প্রচার সম্পাদক","name":null,"name_bn":null,"image":null},
+  {"id":"education-coordinator","group":"initiatives","initiative":"education","role":"Education Coordinator","role_bn":"শিক্ষা সমন্বয়ক","name":null,"name_bn":null,"image":null},
+  {"id":"scholarship-coordinator","group":"initiatives","initiative":"scholarships","role":"Scholarship Coordinator","role_bn":"বৃত্তি কর্মসূচির সমন্বয়ক","name":null,"name_bn":null,"image":null},
+  {"id":"community-coordinator","group":"initiatives","initiative":"community","role":"Community Support Coordinator","role_bn":"সামাজিক সহায়তা সমন্বয়ক","name":null,"name_bn":null,"image":null},
+  {"id":"health-coordinator","group":"initiatives","initiative":"health","role":"Health & Blood Donation Coordinator","role_bn":"স্বাস্থ্য ও রক্তদান সমন্বয়ক","name":null,"name_bn":null,"image":null},
+  {"id":"emergency-coordinator","group":"initiatives","initiative":"emergency","role":"Emergency Assistance Coordinator","role_bn":"জরুরি সহায়তা সমন্বয়ক","name":null,"name_bn":null,"image":null},
+  {"id":"skills-coordinator","group":"initiatives","initiative":"skills","role":"Skills Development Coordinator","role_bn":"দক্ষতা উন্নয়ন সমন্বয়ক","name":null,"name_bn":null,"image":null}
+]

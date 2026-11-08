@@ -37,3 +37,7 @@ English lives at the root and Bangladeshi Bengali at `bn/`. The visible language
 ## Larger interactive design
 
 The site uses larger English and Bengali typography, wider layouts and vector interface icons. The home page includes a manually controlled six-initiative spotlight, category filters, native expandable questions and reduced-motion-aware decorative animation. `refine.py` updates presentation copy and associated Bengali translations before `localize.py` generates all pages. Run `python build.py` after editing source.
+
+## Team page
+
+`team.html` and `bn/team.html` show committee roles and initiative coordinators. Names and portraits are placeholders until supplied. Edit `team.json` to update the structure or add `name`, `name_bn` and an `image` path under `assets/team/`, then run `python build.py`. Portraits are displayed as circular crops using CSS. No real people or appointments are represented by placeholder entries.
