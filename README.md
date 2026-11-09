@@ -41,3 +41,7 @@ The site uses larger English and Bengali typography, wider layouts and vector in
 ## Team page
 
 `team.html` and `bn/team.html` show three groups: Executive Committee, Board of Executives and Board of Coordinators. The Executive Committee contains the office-bearer roles, the Board of Executives has four editable member placeholders, and the Board of Coordinators contains the six initiative coordinators. Names and portraits are placeholders until supplied. Edit `team.json` to update the structure or add `name`, `name_bn` and an `image` path under `assets/team/`, then run `python build.py`. Portraits are displayed as circular crops using CSS. No real people or appointments are represented by placeholder entries.
+
+## Approved wording edits
+
+The English and Bengali edits supplied in `MATESFoundation-rewritten.zip` are recorded in `editorial-changes.json`. `build.py` applies them through `editorial.py` after page generation and translation, preserving the approved wording on rebuilds. If source copy changes, reconcile the matching editorial entry; the build reports unmatched edits.

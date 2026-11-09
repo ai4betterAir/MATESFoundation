@@ -54,3 +54,6 @@ refresh_design(P,programs,icon)
 from localize import build_locales
 build_locales(P)
 
+
+from editorial import apply_editorial_changes
+apply_editorial_changes(P)
