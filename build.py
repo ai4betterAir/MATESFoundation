@@ -66,3 +66,6 @@ redesign_inner_pages(P)
 
 from about_page import build_about_pages
 build_about_pages(P)
+
+from team_directory import build_team_directories
+build_team_directories(P)

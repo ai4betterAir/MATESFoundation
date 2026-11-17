@@ -1,0 +1,108 @@
+/* The committee hierarchy stays in document order at every screen size. */
+.team-directory { background: white; color: #071d35; line-height: 1.5; }
+.team-directory .home-header { border-bottom: 1px solid var(--gold); }
+.team-directory #navigation a { border: 0; padding: 6px 12px; border-radius: 14px; }
+.team-directory #navigation a[aria-current='page'] { color: white; background: var(--teal); }
+.team-directory #navigation { gap: clamp(8px, 2vw, 26px); }
+.directory-wrap { width: calc(100% - 86px); max-width: 1160px; margin-inline: auto; }
+.directory-title { padding: 20px 0 22px; text-align: center; background: linear-gradient(110deg, #edf8f4, #dff2ed); }
+.directory-breadcrumb { display: flex; justify-content: center; align-items: center; gap: 10px; font-size: 16px; }
+.directory-breadcrumb span[aria-hidden] { color: #ac7b24; font-size: 23px; }
+.directory-title h1 { font-size: clamp(44px, 5.5vw, 72px); line-height: 1.2; letter-spacing: -.025em; margin: 6px 0; }
+.directory-title p { font-size: 21px; }
+.directory-title .directory-note { font-size: 16px; font-style: italic; margin-top: 8px; }
+.directory-section { padding: 24px 0; }
+.directory-heading { text-align: center; margin-bottom: 22px; }
+.directory-heading h2 { display: flex; align-items: center; gap: 18px; font-size: clamp(32px, 4vw, 49px); line-height: 1.2; letter-spacing: -.025em; }
+.directory-heading h2::before, .directory-heading h2::after { content: ''; flex: 1; height: 1px; background: var(--gold); }
+.directory-heading p { font-size: 19px; margin-top: 4px; }
+.member-card { border: 1px solid #b5cad5; border-radius: 14px; text-align: center; background: white; padding: 8px 16px 12px; min-width: 0; }
+.member-photo { width: 110px; height: 110px; border-radius: 50%; border: 3px solid #008e88; background: #f3f6f5; overflow: hidden; margin: 0 auto 8px; }
+.member-photo svg { display: block; width: 100%; height: 100%; stroke: none; fill: #c7cccc; }
+.member-photo svg circle { transform: translateY(4px); }
+.member-photo img { width: 100%; height: 100%; object-fit: cover; }
+.member-copy h3 { font-family: 'DM Sans', sans-serif; font-size: 23px; font-weight: 700; line-height: 1.18; letter-spacing: -.025em; overflow-wrap: anywhere; }
+.member-name { font-size: 16px; margin-top: 5px; line-height: 1.4; }
+.member-name.pending { font-style: italic; }
+.president-row { display: flex; justify-content: center; margin-bottom: 18px; }
+.president-row .member-card { width: calc((100% - 36px) / 3); background: #e9f7f1; border-color: #6fc2b9; }
+.leadership-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 18px; }
+.committee-members { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 18px; }
+.committee-members .member-card { width: calc((100% - 36px) / 3); }
+.executive-band { background: #e5f5ee; }
+.executives-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.executives-grid .member-photo { width: 95px; height: 95px; }
+.executives-grid .member-copy h3 { font-size: 21px; }
+.coordinators-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.coordinators-grid .member-card { --member-accent: #008e98; display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: center; padding: 12px; border-color: var(--member-accent); text-align: left; background: #fbfdfd; }
+.coordinators-grid .member-card[data-initiative='scholarships'] { --member-accent: #b99527; }
+.coordinators-grid .member-card[data-initiative='community'] { --member-accent: #4b7f31; }
+.coordinators-grid .member-card[data-initiative='health'] { --member-accent: #cc5965; }
+.coordinators-grid .member-card[data-initiative='emergency'] { --member-accent: #8960ad; }
+.coordinators-grid .member-card[data-initiative='skills'] { --member-accent: #237abd; }
+.coordinators-grid .member-photo { width: 96px; height: 96px; margin: 0; border-color: var(--member-accent); }
+.coordinators-grid .member-copy h3 { font-size: 21px; }
+.directory-about { display: flex; align-items: center; justify-content: center; gap: 18px; margin: 24px auto 0; font-family: 'DM Serif Text', serif; font-size: 24px; font-style: italic; color: #00837f; width: fit-content; }
+.directory-about::before, .directory-about::after { content: ''; width: 100px; height: 1px; background: var(--gold); }
+.directory-about:hover { text-decoration: underline; }
+.directory-footer { background: var(--navy); color: white; border-top: 1px solid var(--gold); }
+.directory-footer > .directory-wrap { min-height: 90px; display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+.directory-footer .brand { background: white; border-radius: 5px; width: 220px; height: 68px; }
+.directory-footer .brand img { width: 250px; top: -32px; left: -23px; }
+.directory-footer nav { display: flex; gap: 40px; font-size: 17px; }
+.directory-footer nav a:hover { text-decoration: underline; }
+html[lang='bn-BD'] .team-directory h1 { font-size: clamp(39px, 5vw, 64px); line-height: 1.5; }
+html[lang='bn-BD'] .team-directory .directory-heading h2 { font-size: clamp(30px, 3.5vw, 44px); line-height: 1.4; }
+html[lang='bn-BD'] .team-directory .member-copy h3 { font-family: 'Noto Sans Bengali', sans-serif; line-height: 1.4; font-size: 23px; }
+html[lang='bn-BD'] .team-directory .coordinators-grid .member-copy h3 { font-size: 21px; }
+html[lang='bn-BD'] .team-directory .directory-title p, html[lang='bn-BD'] .team-directory .directory-heading p { line-height: 1.8; }
+html[lang='bn-BD'] .team-directory .directory-about { font-family: 'Noto Serif Bengali', serif; font-style: normal; }
+@media (max-width: 1100px) {
+  .team-directory #navigation { gap: 8px; }
+  .team-directory #navigation a { padding-inline: 8px; }
+  .directory-wrap { width: calc(100% - 64px); }
+  .coordinators-grid .member-card { grid-template-columns: 80px 1fr; gap: 12px; }
+  .coordinators-grid .member-photo { width: 80px; height: 80px; }
+  .coordinators-grid .member-copy h3 { font-size: 20px; }
+}
+@media (max-width: 800px) {
+  .directory-wrap { width: calc(100% - 40px); }
+  .member-photo { width: 92px; height: 92px; }
+  .member-copy h3 { font-size: 21px; }
+  .coordinators-grid { grid-template-columns: repeat(2, 1fr); }
+  .executives-grid { grid-template-columns: repeat(2, 1fr); }
+  .directory-heading h2 { gap: 12px; }
+  .directory-footer nav { gap: 20px; }
+}
+@media (max-width: 600px) {
+  .directory-title { padding: 18px 0 24px; }
+  .directory-title h1 { font-size: 46px; }
+  .directory-title p { font-size: 18px; }
+  .directory-title .directory-note { font-size: 14px; }
+  .directory-breadcrumb { font-size: 14px; }
+  .directory-heading h2 { font-size: 32px; }
+  .directory-heading h2::before, .directory-heading h2::after { display: none; }
+  .directory-heading p { font-size: 17px; }
+  .directory-section { padding: 28px 0; }
+  .president-row .member-card { width: min(100%, 260px); }
+  .leadership-row { grid-template-columns: 1fr; gap: 12px; }
+  .leadership-row .member-card { display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: center; text-align: left; }
+  .leadership-row .member-photo { margin: 0; }
+  .committee-members { gap: 12px; }
+  .committee-members .member-card { width: calc((100% - 12px) / 2); padding: 12px 8px; }
+  .member-copy h3 { font-size: 20px; }
+  .member-name { font-size: 14px; }
+  .executives-grid { gap: 12px; }
+  .executives-grid .member-card { padding: 12px 8px; }
+  .executives-grid .member-copy h3 { font-size: 19px; }
+  .coordinators-grid { grid-template-columns: 1fr; }
+  .coordinators-grid .member-card { grid-template-columns: 96px 1fr; padding: 14px; }
+  .coordinators-grid .member-photo { width: 96px; height: 96px; }
+  .coordinators-grid .member-copy h3 { font-size: 22px; }
+  .directory-about { font-size: 22px; gap: 12px; }
+  .directory-about::before, .directory-about::after { width: 25px; }
+  .directory-footer > .directory-wrap { flex-direction: column; align-items: center; padding: 20px 0; gap: 18px; }
+  .directory-footer nav { flex-wrap: wrap; justify-content: center; font-size: 15px; gap: 22px; }
+  html[lang='bn-BD'] .team-directory .member-copy h3 { font-size: 20px; }
+  html[lang='bn-BD'] .team-directory .directory-heading h2 { font-size: 30px; }
+}

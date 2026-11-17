@@ -18,6 +18,15 @@
     "image": null
   },
   {
+    "id": "vice-president-2",
+    "group": "executive-committee",
+    "role": "Vice President",
+    "role_bn": "সহসভাপতি",
+    "name": null,
+    "name_bn": null,
+    "image": null
+  },
+  {
     "id": "secretary",
     "group": "executive-committee",
     "role": "Secretary",
