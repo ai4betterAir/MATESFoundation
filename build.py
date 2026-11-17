@@ -57,3 +57,6 @@ build_locales(P)
 
 from editorial import apply_editorial_changes
 apply_editorial_changes(P)
+
+from home_page import build_homepages
+build_homepages(P)
