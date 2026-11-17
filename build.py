@@ -60,3 +60,6 @@ apply_editorial_changes(P)
 
 from home_page import build_homepages
 build_homepages(P)
+
+from inner_pages import redesign_inner_pages
+redesign_inner_pages(P)

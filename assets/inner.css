@@ -1,0 +1,182 @@
+/* Shared layouts for the foundation's bilingual information pages. */
+.inner-page { --accent: #008e98; --tint: #e8f4f6; line-height: 1.65; }
+.theme-scholarships { --accent: #996713; --tint: #fff3e2; }
+.theme-community { --accent: #297953; --tint: #eaf6ee; }
+.theme-health { --accent: #b82a44; --tint: #ffefed; }
+.theme-emergency { --accent: #79509a; --tint: #f1eafa; }
+.theme-skills { --accent: #29749b; --tint: #e7f1f8; }
+.inner-page .wrap { width: calc(100% - 96px); max-width: 1280px; margin-inline: auto; }
+.inner-page main { overflow: clip; }
+.inner-page main h1 { font-size: clamp(46px, 5.7vw, 80px); line-height: 1.08; letter-spacing: -.04em; margin: 12px 0 0; }
+.inner-page main h2 { font-size: clamp(32px, 3.2vw, 46px); line-height: 1.14; letter-spacing: -.025em; margin-bottom: 24px; }
+.inner-page main h3 { font-size: 27px; line-height: 1.2; margin-bottom: 12px; letter-spacing: -.02em; }
+.inner-page main p { margin-bottom: 20px; font-size: 18px; color: #42596b; }
+.inner-page main em { color: var(--accent); font-style: normal; }
+.inner-page .eyebrow { display: block; font: 700 12px/1.5 'DM Sans', sans-serif; color: var(--accent); letter-spacing: .16em; margin-bottom: 16px; }
+.inner-page .page-hero { position: relative; padding: 36px 0 50px; background: linear-gradient(115deg, var(--cream) 50%, var(--tint)); border-bottom: 1px solid #062b4e0e; }
+.page-hero > .wrap { position: relative; z-index: 1; }
+.page-hero h1 { max-width: 850px; width: 73%; }
+.inner-page .page-hero p { max-width: 730px; width: 65%; font-size: 21px; line-height: 1.55; margin: 20px 0 0; }
+.breadcrumb { display: inline-flex; gap: 16px; font-size: 13px; color: #607285; margin-bottom: 32px; }
+.breadcrumb:hover { color: var(--accent); }
+.breadcrumb + .eyebrow { margin-bottom: 12px; }
+.page-emblem { position: absolute; width: 240px; height: 240px; border: 1px solid #008e9826; background: #ffffff8f; border-radius: 50%; right: max(4vw, calc((100% - 1280px) / 2)); top: 50%; transform: translateY(-38%); display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 65px #062b4e08; }
+.page-emblem::before { content: ''; position: absolute; inset: -16px; border: 1px solid #008e9814; border-radius: 50%; }
+.page-emblem { background: white; overflow: hidden; }
+.page-emblem img { width: 260px; height: auto; }
+.page-emblem .initiative-icon { transform: scale(2.15); }
+.inner-page .section { padding: 66px 0; }
+.inner-page .pale { background: #f0f5f3; }
+.inner-page .narrow { max-width: 840px; }
+.inner-page .narrow h2:not(:first-child) { margin-top: 38px; }
+.inner-page .large-copy { font-size: 23px; line-height: 1.6; color: #173c51; }
+.about-grid, .detail-grid, .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 72px; align-items: start; }
+.about-grid { grid-template-columns: .9fr 1.1fr; }
+.about-grid > div:first-child { border-left: 3px solid var(--gold); padding-left: 30px; }
+.about-copy p:last-child { margin-bottom: 0; }
+.values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.values-grid article { background: white; padding: 28px; border-radius: 16px; border-top: 3px solid var(--teal); }
+.values-grid article:nth-child(2) { border-color: #c38b2c; }
+.values-grid article:nth-child(3) { border-color: #ba5067; }
+.values-grid article:nth-child(4) { border-color: #76589c; }
+.values-grid article > span { display: none; }
+.values-grid p { font-size: 16px !important; margin: 0 !important; }
+.inner-page .program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.inner-page .program-card { --card-color: #e8f4f6; background: var(--card-color); display: flex; flex-direction: column; align-items: flex-start; padding: 28px; border-radius: 20px; border: 1px solid #062b4e08; transition: transform .2s, box-shadow .2s; }
+.program-card[data-initiative='scholarships'] { --card-color: #fff3e2; }
+.program-card[data-initiative='community'] { --card-color: #eaf6ee; }
+.program-card[data-initiative='health'] { --card-color: #ffefed; }
+.program-card[data-initiative='emergency'] { --card-color: #f1eafa; }
+.program-card[data-initiative='skills'] { --card-color: #e7f1f8; }
+.inner-page .program-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px #062b4e0c; }
+.program-card[hidden] { display: none !important; }
+.card-top { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 22px; }
+.program-icon, .program-icon .initiative-icon { display: block; }
+.number { display: none; }
+.inner-page .program-card h3 { font-size: 30px; }
+.inner-page .program-card p { font-size: 17px; margin-bottom: 24px; }
+.card-link { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: auto; font-weight: 700; color: #007983; font-size: 15px; }
+.arrow-svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; vertical-align: middle; flex-shrink: 0; }
+.initiative-filters { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 30px; }
+.initiative-filters button { border: 1px solid #c5d7d8; background: white; color: var(--navy); border-radius: 30px; padding: 10px 22px; font: inherit; font-size: 15px; }
+.initiative-filters button[aria-pressed='true'] { color: white; background: var(--teal); border-color: var(--teal); }
+.inner-page .small-note { font-size: 14px; line-height: 1.7; color: #526476; }
+.detail-icon { width: 58px; height: 58px; padding: 13px; display: inline-flex; color: var(--accent); background: var(--tint); border-radius: 14px; margin-bottom: 22px; }
+.detail-icon svg { width: 100%; height: 100%; }
+.info-panel { background: var(--tint); padding: 34px; border-radius: 22px; border-top: 4px solid var(--accent); position: sticky; top: 25px; }
+.inner-page .info-panel h3 { font-size: 34px; }
+.info-panel .button { background: var(--accent); border-color: var(--accent); margin: 6px 0 22px; }
+.info-panel p:last-child { margin-bottom: 0; }
+.focus-list { list-style: none; padding: 0; margin: 20px 0 28px; }
+.focus-list li { padding: 14px 16px 14px 38px; background: #fff; border: 1px solid #062b4e0b; margin-bottom: 9px; border-radius: 10px; position: relative; font-size: 17px; }
+.focus-list li::before { content: '✓'; position: absolute; left: 14px; color: var(--accent); font-weight: 700; }
+.notice { background: #fff5df; color: #72541a; padding: 22px 26px; border-radius: 14px; border-left: 3px solid #c38b2c; font-size: 16px; margin-bottom: 24px; }
+.notice.wrap { margin-bottom: 30px; }
+.community-event { display: grid; grid-template-columns: .7fr 1.3fr; background: white; border-radius: 22px; overflow: hidden; border: 1px solid #062b4e0c; }
+.event-stamp { background: #eaf6ee; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; gap: 12px; }
+.event-year { font-family: 'DM Serif Text', serif; font-size: 90px; line-height: 1; color: #297953; }
+.event-status { font-size: 14px; font-weight: 700; color: #297953; padding: 4px 16px; border-radius: 20px; border: 1px solid #29795344; }
+.event-symbol { width: 60px; color: #297953; margin-top: 15px; }
+.event-story { padding: 38px; }
+.inner-page .event-story h3 { font-size: 37px; }
+.inner-page .event-kicker { font-size: 12px; letter-spacing: .1em; color: #297953; font-weight: 700; }
+.event-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.event-tags span { padding: 5px 12px; border-radius: 20px; background: #f0f5f3; font-size: 13px; color: #297953; }
+.team-intro-note { margin-top: 28px; }
+.team-section-heading { margin-bottom: 28px; }
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.team-card { padding: 26px 16px; border: 1px solid #dfe8e5; border-radius: 18px; background: white; text-align: center; }
+.team-photo { width: 126px; height: 126px; margin: 0 auto 20px; border-radius: 50%; background: #edf5f2; color: #6b938c; border: 5px solid #f8fbf9; overflow: hidden; }
+.team-photo svg { width: 100%; height: 100%; padding: 21px; }
+.team-photo img { width: 100%; height: 100%; object-fit: cover; }
+.inner-page .team-card h3 { font-size: 24px; }
+.inner-page .team-member-name { font-size: 16px; margin: 8px 0 0; }
+.inner-page .team-member-name.pending { font-size: 13px; color: #75818b; }
+.coordinator-grid { grid-template-columns: repeat(3, 1fr); }
+.team-card[data-initiative] { border-top: 3px solid var(--teal); }
+.team-card[data-initiative='health'] { border-top-color: #b82a44; }
+.team-card[data-initiative='scholarships'] { border-top-color: #b68b33; }
+.team-card[data-initiative='emergency'] { border-top-color: #79509a; }
+.team-card[data-initiative='skills'] { border-top-color: #29749b; }
+.participation { display: grid; gap: 28px; }
+.participation article { padding: 38px 42px; border-radius: 22px; background: #e8f4f6; scroll-margin-top: 25px; }
+.participation article:nth-child(2) { background: #eaf6ee; }
+.participation article:nth-child(3) { background: #fff3e2; }
+.participation article > p { max-width: 850px; }
+.participation .focus-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.participation .focus-list li { margin: 0; }
+.text-link { display: inline-flex; align-items: center; gap: 14px; font-weight: 700; color: #007983; font-size: 17px; border: none; background: none; padding: 0; }
+.text-link:hover { text-decoration: underline; }
+.actions { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
+.contact-grid { grid-template-columns: .85fr 1.15fr; gap: 64px; }
+.contact-note { background: #e8f4f6; border-radius: 16px; padding: 26px; margin: 30px 0 22px; }
+.contact-note p:last-child { margin-bottom: 0; }
+#interest-form { padding: 32px; background: white; border: 1px solid #dfe8e5; border-radius: 22px; box-shadow: 0 15px 50px #062b4e06; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+#interest-form label { display: block; color: #29485a; font-size: 15px; font-weight: 600; margin-bottom: 20px; }
+input, select, textarea { display: block; width: 100%; font: inherit; font-weight: 400; font-size: 16px; color: #16374c; background: #fbfcfc; border: 1px solid #c9d8d6; padding: 12px 14px; border-radius: 9px; margin-top: 8px; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--teal); outline-offset: 2px; }
+textarea { resize: vertical; min-height: 120px; }
+#message-result { margin-top: 30px; padding-top: 24px; border-top: 1px solid #dfe8e5; }
+#message-result textarea { margin-bottom: 22px; }
+#message-result .actions { gap: 14px; }
+.inner-page footer { line-height: 1.5; }
+.inner-page [hidden] { display: none !important; }
+html[lang='bn-BD'] .inner-page main h1 { font-size: clamp(39px, 5vw, 68px); line-height: 1.35; letter-spacing: -.025em; }
+html[lang='bn-BD'] .inner-page main h2 { font-size: clamp(29px, 3vw, 41px); line-height: 1.5; }
+html[lang='bn-BD'] .inner-page main h3 { line-height: 1.5; }
+html[lang='bn-BD'] .inner-page .eyebrow { font-family: 'Noto Sans Bengali', sans-serif; letter-spacing: .02em; }
+html[lang='bn-BD'] .inner-page main p { line-height: 1.9; }
+html[lang='bn-BD'] .inner-page .program-card h3 { font-size: 27px; }
+html[lang='bn-BD'] .inner-page .team-card h3 { font-size: 23px; }
+@media (max-width: 1000px) {
+  .inner-page .wrap { width: calc(100% - 64px); }
+  .page-emblem { width: 185px; height: 185px; right: 32px; }
+  .page-emblem img { width: 205px; }
+  .page-emblem .initiative-icon { transform: scale(1.6); }
+  .page-hero h1 { width: 74%; }
+  .about-grid, .detail-grid, .contact-grid { gap: 32px; }
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+  .inner-page .program-grid { grid-template-columns: repeat(2, 1fr); }
+  .participation .focus-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .inner-page .wrap { width: calc(100% - 40px); }
+  .inner-page .page-hero { padding: 24px 0 34px; }
+  .page-emblem { display: none; }
+  .page-hero h1, .inner-page .page-hero p { width: 100%; }
+  .inner-page main h1 { font-size: clamp(41px, 9vw, 60px); }
+  .inner-page .page-hero p { font-size: 19px; }
+  .inner-page .section { padding: 42px 0; }
+  .about-grid, .detail-grid, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+  .info-panel { position: static; padding: 28px; }
+  .inner-page .program-grid { grid-template-columns: 1fr; }
+  .values-grid { gap: 14px; }
+  .values-grid article { padding: 22px; }
+  .inner-page .program-card { padding: 26px; }
+  .community-event { grid-template-columns: 1fr; }
+  .event-stamp { padding: 28px; flex-direction: row; flex-wrap: wrap; gap: 18px; }
+  .event-year { font-size: 54px; }
+  .event-symbol { margin: 0; width: 40px; }
+  .event-story { padding: 28px; }
+  .team-grid, .coordinator-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .team-photo { width: 100px; height: 100px; }
+  .team-photo svg { padding: 16px; }
+  .inner-page .team-card h3 { font-size: 21px; }
+  .team-card { padding: 22px 12px; }
+  .participation article { padding: 28px; }
+  .participation .button { text-align: left; }
+  #interest-form { padding: 24px; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  .initiative-filters { gap: 8px; }
+  .initiative-filters button { padding: 8px 14px; font-size: 14px; }
+  html[lang='bn-BD'] .inner-page main h1 { font-size: clamp(35px, 8vw, 51px); }
+  html[lang='bn-BD'] .inner-page .team-card h3 { font-size: 20px; }
+}
+@media (max-width: 400px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .inner-page main h3 { font-size: 24px; }
+  .inner-page .program-card h3 { font-size: 29px; }
+  .team-grid, .coordinator-grid { grid-template-columns: 1fr; }
+}

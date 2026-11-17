@@ -12,6 +12,11 @@ const toggle=document.querySelector('.menu-toggle');
 const nav=document.querySelector('#navigation');
 if(toggle&&nav){toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?copy.close:copy.open);nav.classList.toggle('open',open);});document.addEventListener('keydown',e=>{if(e.key==='Escape'){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label',copy.open);}});nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');}});}
 const current=location.pathname.split('/').pop()||'index.html';
+document.querySelectorAll('[data-language]').forEach(link=>{
+ link.addEventListener('click',()=>{
+  try{localStorage.setItem('mates-language',link.dataset.language);}catch{}
+ });
+});
 document.querySelectorAll('nav a').forEach(a=>{if(a.getAttribute('href')===current)a.setAttribute('aria-current','page');});
 const year=document.querySelector('#year');if(year)year.textContent=new Date().getFullYear().toLocaleString(bengali?'bn-BD':'en',{useGrouping:false});
 document.querySelectorAll('.back-top').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}));
